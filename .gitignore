@@ -5,3 +5,4 @@ Spatialize.xcodeproj/
 dist/
 HANDOFF.md
 Local.xcconfig
+tools/

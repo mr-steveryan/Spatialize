@@ -4,7 +4,7 @@ import AudioToolbox
 /// Renders the captured stereo as two virtual speakers around the listener (HRTF) and plays it.
 final class Spatializer {
     /// What the underlying AUSpatialMixer is actually doing, read back after start.
-    struct MixerState: Equatable {
+    struct MixerState {
         var algorithm: UInt32
         var outputType: UInt32
         var personalizedMode: UInt32

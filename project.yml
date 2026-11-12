@@ -27,6 +27,10 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.mrsteve.spatialize
         CODE_SIGN_STYLE: Automatic
+      configs:
+        Release:
+          # Keep the debugger entitlement (get-task-allow) out of shipped builds.
+          CODE_SIGN_INJECT_BASE_ENTITLEMENTS: NO
   SpatializeTests:
     type: bundle.unit-test
     platform: macOS
