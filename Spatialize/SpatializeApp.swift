@@ -9,8 +9,8 @@ struct SpatializeApp: App {
     @State private var controller = Controller()
 
     var body: some Scene {
-        MenuBarExtra("Spatialize", systemImage: controller.isOn ? "headphones.circle.fill" : "headphones") {
-            Toggle("Spatial Audio for Spotify", isOn: Binding(get: { controller.isOn }, set: { controller.set(on: $0) }))
+        MenuBarExtra {
+            Toggle("Spatialize Spotify", isOn: Binding(get: { controller.isOn }, set: { controller.set(on: $0) }))
             if controller.isOn, let inUse = controller.profileInUse {
                 Text(inUse ? "Using your personal ear profile" : "Personal ear profile unavailable, using generic")
             }
@@ -22,9 +22,20 @@ struct SpatializeApp: App {
                 controller.set(on: false)
                 NSApplication.shared.terminate(nil)
             }
+        } label: {
+            Image(nsImage: menuBarIcon).accessibilityLabel("Spatialize")
         }
     }
 }
+
+@MainActor private let menuBarIcon: NSImage = {
+    guard let image = Bundle.main.image(forResource: "MenuBarIcon") else {
+        preconditionFailure("MenuBarIcon.png is missing from the app bundle")
+    }
+    // Template: macOS tints it like other menu bar items (light/dark mode, highlight).
+    image.isTemplate = true
+    return image
+}()
 
 @MainActor @Observable
 final class Controller {

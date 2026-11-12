@@ -12,11 +12,15 @@ targets:
   Spatialize:
     type: application
     platform: macOS
-    sources: [Spatialize]
+    sources:
+      - Spatialize
+      - path: waveform.icns
+        buildPhase: resources
     info:
       path: Spatialize/Info.plist
       properties:
         CFBundleDisplayName: Spatialize
+        CFBundleIconFile: waveform
         LSUIElement: true
         NSAudioCaptureUsageDescription: Spatialize captures Spotify's audio to play it back with spatial sound.
     settings:
