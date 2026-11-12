@@ -2,9 +2,11 @@ name: Spatialize
 options:
   deploymentTarget:
     macOS: "14.2"
+configFiles:
+  Debug: Signing.xcconfig
+  Release: Signing.xcconfig
 settings:
   base:
-    DEVELOPMENT_TEAM: 98PJ3UM94Y
     SWIFT_VERSION: "6.0"
 targets:
   Spatialize:

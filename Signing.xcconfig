@@ -1,0 +1,2 @@
+// Signing team comes from the gitignored Local.xcconfig: DEVELOPMENT_TEAM = <your team ID>
+#include? "Local.xcconfig"
