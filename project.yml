@@ -1,0 +1,23 @@
+name: Spatialize
+options:
+  deploymentTarget:
+    macOS: "14.2"
+settings:
+  base:
+    DEVELOPMENT_TEAM: 98PJ3UM94Y
+    SWIFT_VERSION: "6.0"
+targets:
+  Spatialize:
+    type: application
+    platform: macOS
+    sources: [Spatialize]
+    info:
+      path: Spatialize/Info.plist
+      properties:
+        CFBundleDisplayName: Spatialize
+        LSUIElement: true
+        NSAudioCaptureUsageDescription: Spatialize captures Spotify's audio to play it back with spatial sound.
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mrsteve.spatialize
+        CODE_SIGN_STYLE: Automatic
