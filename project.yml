@@ -21,3 +21,20 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.mrsteve.spatialize
         CODE_SIGN_STYLE: Automatic
+  SpatializeTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [SpatializeTests]
+    dependencies:
+      - target: Spatialize
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mrsteve.spatialize.tests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  Spatialize:
+    build:
+      targets:
+        Spatialize: all
+    test:
+      targets: [SpatializeTests]
